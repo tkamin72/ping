@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" href="cube.scss" type="scss">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pingisname Software Services</title>
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand float-left" href="#"> <span style='color: #0275d8'>P</span>
+                <span style='color: #5cb85c'>i</span>
+                <span style='color: #f0ad4e'>n</span>
+                <span style='color: #d9534f'>g</span></a>
+
+
+            <!--Hamburger Button for small screen -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary ml-3" href="index.php?page=home">Home <i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-success ml-3" href="#">About <i class="fas fa-hands"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning ml-3" href="#">Services <i class="fas fa-laptop-code"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger ml-3 pr-4" href="#">Contact <i class="fas fa-phone"></i></a>
+                    </li>
+                </ul>
+                <form class=" ml-auto mt-auto form-inline">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="&#xf1a0;oogle Search" style="font-family:Arial,FontAwesome;">
+                        <div class="input-group-append">
+                            <button class="btn-success w-auto rounded-right">Search</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+</head>
+<style>
+
+
+    .content {
+        position: fixed;
+        top: 0;
+        color: black;
+        width: 100%;
+
+
+    }
+    body{background: white;}
+
+    /* This Parts for the wifi signal on home page*/
+    .i{width: 20%}
+    #circle {
+        width:320px;
+        z-index: 998;
+        top: 100px;
+        height: 40px;
+
+
+    }
+
+
+
+    .circle {
+        padding:8px;
+        border: 8px solid transparent;
+        border-radius:400px;
+        -webkit-animation: left 2s linear infinite;
+        -moz-animation: left 2s linear infinite;
+        -o-animation: left 2s linear infinite;
+        animation: left 2s linear infinite;
+    }
+
+
+
+    .one {width:255px;
+        height:250px;
+        left: -4em;
+        -webkit-animation-delay:1s;
+    }
+    .two {-webkit-animation-delay:.9s;
+        -moz-animation-delay:.9s;
+        -o-animation-delay:.9s;
+        animation-delay:.9s;}
+    .three {-webkit-animation-delay:.8s;
+        -moz-animation-delay:.8s;
+        -o-animation-delay:.8s;
+        animation-delay:.8s;}
+    .four {-webkit-animation-delay:.7s;
+        -moz-animation-delay:.7s;
+        -o-animation-delay:.7s;
+        animation-delay:.7s;}
+    .five {-webkit-animation-delay:.6s;
+        -moz-animation-delay:.6s;
+        -o-animation-delay:.6s;
+        animation-delay:.6s;}
+    .six {-webkit-animation-delay:.5s;
+        -moz-animation-delay:.5s;
+        -o-animation-delay:.5s;
+        animation-delay:.5s;}
+    .seven {-webkit-animation-delay:.4s;
+        -moz-animation-delay:.4s;
+        -o-animation-delay:.4s;
+        animation-delay:.4s;}
+    .eight {-webkit-animation-delay:.3s;
+        -moz-animation-delay:.3s;
+        -o-animation-delay:.3s;
+        animation-delay:.3s;}
+
+
+    @-webkit-keyframes left{
+        0% { border-top: 8px solid #0275d8;}
+        25% { border-top: 8px solid #5cb85c;}
+        50% { border-top: 8px solid #f0ad4e;}
+        75% { border-top: 8px solid #d9534f;}
+        100% { border-top: 8px solid #d9534f;}
+    }
+
+    @-moz-keyframes left{
+        0% { border-top: 8px solid #0275d8;}
+        25% { border-top: 8px solid #5cb85c;}
+        50% { border-top: 8px solid #f0ad4e;}
+        75% { border-top: 8px solid #d9534f;}
+        100% { border-top: 8px solid #d9534f;}
+    }
+    @-o-keyframes left{
+        0% { border-top: 8px solid #0275d8;}
+        25% { border-top: 8px solid #5cb85c;}
+        50% { border-top: 8px solid #f0ad4e;}
+        75% { border-top: 8px solid #d9534f;}
+        100% { border-top: 8px solid #d9534f;}
+    }
+    @keyframes left{
+        0% { border-top: 8px solid #0275d8;}
+        25% { border-top: 8px solid #5cb85c;}
+        50% { border-top: 8px solid #f0ad4e;}
+        75% { border-top: 8px solid #d9534f;}
+        100% { border-top: 8px solid #d9534f;}
+    }
+    /*End of wifi signal shit*/
+</style>
+<div class="jumbotron bg-dark">
+
+    <div class="container">
+        <div class="clearfix pl-1" id="circle">
+            <br>
+            <div class="circle one ">
+                <div class="circle two">
+                    <div class="circle three ">
+                        <div class="circle four">
+                            <div class="circle five">
+                                <div class="circle six">
+                                    <div class="circle seven">
+                                        <div class="circle eight">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+<h1  class="pl-5 text display-1 d">
+    <span style='color: #0275d8'>P</span>
+    <span style='color: #5cb85c'>i</span>
+    <span style='color: #f0ad4e'>n</span>
+    <span style='color: #d9534f'>g</span></h1>
+
+<h6  class="blockquote-footer text-primary pl-5  display-4" id="x">Software Services</h6>
+    <button type="button" class="btn-lg w-25 btn-info" data-toggle="modal" data-target="#signInModal">Sign in <i class="fas fa-sign-in-alt"></i></button>
+    </div>
+    <div class="scene">
+        <div class="cube">
+            <div class="side back"></div>
+            <div class="side left"></div>
+            <div class="side right"></div>
+            <div class="side top"></div>
+            <div class="side bottom"></div>
+            <div class="side front"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container justify-content-center">
+    <div class="row">
+        <div style="text-align: center;" class="col-sm-4 border-right mx-auto justify-content-center">
+
+            <p align="center" class="text mt-5">Applications and<br> Services <i class="fas fa-laptop-code"></i></p>
+            <a  href="#">Learn more</a>
+            <br><br><Br>
+            <br>
+        </div>
+
+        <div style="text-align: center;" class="col-sm-4  border-right">
+            <p align="center" class="text mt-5">Business<br>inquiries <i class="far fa-handshake"></i></p>
+            <a  href="#">Learn more</a>
+            <br><br><Br>
+            <br>
+        </div>
+        <div style="text-align: center;" class="col-sm-4 ">
+            <p align="center" class="text mt-5">Engaged<br> Schedule <i class="far fa-calendar-alt"></i></p>
+            <a  href="#">Learn more</a>
+            <br><br><Br>
+            <br>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title display-3" id="exampleModalLongTitle">Sign in <i class="fas fa-sign-in-alt"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="needs-validation" id="loginForm" novalidate>
+                <div class="form-group">
+                    <div class="col-md-6 mb-3 mr-2 ml-2 mt-2 ">
+                        <label for="username">User name</label>
+                        <input type="text" class="form-control w-100" id="username"  required>
+                        <div class="valid-feedback">
+                            Valid entry <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="invalid-feedback">
+                            Enter User name <i class="fas fa-exclamation"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3 mr-2 ml-2">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control w-100" id="password" required><small class="form-text text-muted">Never share your Password with anyone. No matter what...</small>
+                        <div class="valid-feedback">
+                            Valid entry <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="invalid-feedback">
+                            Enter Password <i class="fas fa-exclamation"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-info">Submit</button>
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+</div>
+<body>
+<br>
+<div class="jumbotron">
+
+    <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+<!--These CDN's are for the AJAX Request sent to the server to log people in-->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/mtb.js"></script>
+<script>
+
+
+
+                                //Login Form Validation //
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
+    //AJAX for login//
+
+                                $(document).ready(function() {
+                                    $("#loginForm").submit(function(e){
+                                        e.preventDefault();
+                                        $.ajax({
+                                            url:'isValidAccount.php',
+                                            type:'POST',
+                                            data: {username:$("#username").val(), password:$("#password").val()},
+                                            success: function(resp) {
+                                                if(resp == "invalid") {
+                                                    $("#errorMsg").html("Invalid username and password!");
+                                                } else {
+                                                    window.location.href= resp;
+                                                }
+                                            }
+                                        });
+                                    });
+                                });
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
