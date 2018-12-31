@@ -163,49 +163,317 @@
         100% { border-top: 8px solid #d9534f;}
     }
     /*End of wifi signal shit*/
+
+    /*Animations and keyframes for the spinning cube carousel, Must be very careful when changing properties
+    If you change the CubeSpinner dimensions, you must change the px values to half that value or shits gonna
+    get messed up. I set a mark on where the manges should be made*/
+
+
+                /*---->>>Thank you Calc 1<<<
+
+
+    @-webkit-keyframes spincube {
+        from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+        16%      { -webkit-transform: rotateY(-90deg);                           }
+        33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
+        50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg);           }
+        66%      { -webkit-transform: rotateY(-270deg) rotateX(90deg);           }
+        83%      { -webkit-transform: rotateX(90deg);                            }
+    }
+
+    /*  X,Y,Z Keyframes and rotational degrees
+    @keyframes spincube {
+        from,to {
+            -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        16% {
+            -moz-transform: rotateY(-90deg);
+            -ms-transform: rotateY(-90deg);
+            transform: rotateY(-90deg);
+        }
+        33% {
+            -moz-transform: rotateY(-90deg) rotateZ(90deg);
+            -ms-transform: rotateY(-90deg) rotateZ(90deg);
+            transform: rotateY(-90deg) rotateZ(90deg);
+        }
+        50% {
+            -moz-transform: rotateY(-180deg) rotateZ(90deg);
+            -ms-transform: rotateY(-180deg) rotateZ(90deg);
+            transform: rotateY(-180deg) rotateZ(90deg);
+        }
+        66% {
+            -moz-transform: rotateY(-270deg) rotateX(90deg);
+            -ms-transform: rotateY(-270deg) rotateX(90deg);
+            transform: rotateY(-270deg) rotateX(90deg);
+        }
+        83% {
+            -moz-transform: rotateX(90deg);
+            -ms-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+        }
+    }
+
+    .cubespinner {
+        -webkit-animation-name: spincube;
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 12s;
+
+        animation-name: spincube;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 12s;
+
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+
+        -webkit-transform-origin: 250px 250px 0;
+        -moz-transform-origin: 250px 250px 0;
+        -ms-transform-origin: 250px 250px 0;
+        transform-origin: 250px 250px 0;
+    }
+
+    .cubespinner div {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+
+        background: rgba(255,255,255,0.8);
+
+        line-height: 500px;
+        text-align: center;
+    }
+
+    .cubespinner .face1 {
+        -webkit-transform: translateZ(250px);
+        -moz-transform: translateZ(250px);
+        -ms-transform: translateZ(250px);
+        transform: translateZ(250px);
+    }
+    .cubespinner .face2 {
+        -webkit-transform: rotateY(90deg) translateZ(250px);
+        -moz-transform: rotateY(90deg) translateZ(250px);
+        -ms-transform: rotateY(90deg) translateZ(250px);
+        transform: rotateY(90deg) translateZ(250px);
+    }
+    .cubespinner .face3 {
+        -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(250px);
+        -moz-transform: rotateY(90deg) rotateX(90deg) translateZ(250px);
+        -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(250px);
+        transform: rotateY(90deg) rotateX(90deg) translateZ(250px);
+    }
+    .cubespinner .face4 {
+        -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(250px);
+        -moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(250px);
+        -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(250px);
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(250px);
+    }
+    .cubespinner .face5 {
+        -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(250px);
+        -moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(250px);
+        -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(250px);
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(250px);
+    }
+    .cubespinner .face6 {
+        -webkit-transform: rotateX(-90deg) translateZ(250px);
+        -moz-transform: rotateX(-90deg) translateZ(250px);
+        -ms-transform: rotateX(-90deg) translateZ(250px);
+        transform: rotateX(-90deg) translateZ(250px);
+    }*/
+
+    /* 3D Slideshow */
+
+    #slideshow {
+
+        width: 100%;
+        background: transparent;
+        margin-right: 25px;
+        align-items: center;
+        align-content: center;
+        box-sizing: border-box;
+
+        margin-left: 100px;
+    }
+
+    .slideshow-title {
+        font-family: 'Allerta Stencil';
+        font-size: 62px;
+        color: #fff;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 25%;
+        letter-spacing: 3px;
+        font-weight: 300;
+    }
+
+    .sub-heading {
+        padding-top: 50px;
+        font-size: 18px;
+    } .sub-heading-two {
+          font-size: 15px;
+      } .sub-heading-three {
+            font-size: 13px;
+        } .sub-heading-four {
+              font-size: 11px;
+          } .sub-heading-five {
+                font-size: 9px;
+            } .sub-heading-six {
+                  font-size: 7px;
+              } .sub-heading-seven {
+                    font-size: 5px;
+                } .sub-heading-eight {
+                      font-size: 3px;
+                  } .sub-heading-nine {
+                        font-size: 1px;
+                    }
+
+    .entire-content {
+        width: 190px;
+        perspective: 1000px;
+        position: relative;
+        margin-left: 50px;
+
+    }
+
+    .content-carrousel {
+        width: 100%;
+        position: absolute;
+        float: right;
+        animation: rotar 15s infinite linear;
+        transform-style: preserve-3d;
+    }
+
+    .content-carrousel:hover {
+        animation-play-state: paused;
+        cursor: pointer;
+    }
+
+    .content-carrousel figure {
+        width: 100%;
+        height: 120px;
+
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .content-carrousel figure:nth-child(1) {
+        transform: rotateY(0deg) translateZ(300px);
+    } .content-carrousel figure:nth-child(2) {
+          transform: rotateY(40deg) translateZ(300px);
+      } .content-carrousel figure:nth-child(3) {
+            transform: rotateY(80deg) translateZ(300px);
+        } .content-carrousel figure:nth-child(4) {
+              transform: rotateY(120deg) translateZ(300px);
+          } .content-carrousel figure:nth-child(5) {
+                transform: rotateY(160deg) translateZ(300px);
+            } .content-carrousel figure:nth-child(6) {
+                  transform: rotateY(200deg) translateZ(300px);
+              } .content-carrousel figure:nth-child(7) {
+                    transform: rotateY(240deg) translateZ(300px);
+                } .content-carrousel figure:nth-child(8) {
+                      transform: rotateY(280deg) translateZ(300px);
+                  } .content-carrousel figure:nth-child(9) {
+                        transform: rotateY(320deg) translateZ(300px);
+                    } .content-carrousel figure:nth-child(10) {
+                          transform: rotateY(360deg) translateZ(300px);
+                      }
+
+    .shadow {
+        position: absolute;
+        box-shadow: 0px 0px 20px 0px #000;
+        border-radius: 1px;
+    }
+
+    .content-carrousel img {
+        image-rendering: auto;
+        transition: all 300ms;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-carrousel img:hover {
+        transform: scale(1.2);
+        transition: all 300ms;
+    }
+
+    @keyframes rotar {
+        from {
+            transform: rotateY(0deg);
+        } to {
+              transform: rotateY(360deg);
+          }
+    }
+
 </style>
+
+
+
+
 <div class="jumbotron bg-dark">
 
     <div class="container">
-        <div class="clearfix pl-1" id="circle">
-            <br>
-            <div class="circle one ">
-                <div class="circle two">
-                    <div class="circle three ">
-                        <div class="circle four">
-                            <div class="circle five">
-                                <div class="circle six">
-                                    <div class="circle seven">
-                                        <div class="circle eight">
+        <div class="row">
+            <div class="col-sm">
+                <div class="container">
+
+                    <div class="clearfix pl-1" id="circle">
+                        <br>
+                        <div class="circle one ">
+                            <div class="circle two">
+                                <div class="circle three ">
+                                    <div class="circle four">
+                                        <div class="circle five">
+                                            <div class="circle six">
+                                                <div class="circle seven">
+                                                    <div class="circle eight">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <br><br><br><br>
+
+                    <h1  class="pl-5 text display-1">
+                        <span style='color: #0275d8'>P</span>
+                        <span style='color: #5cb85c'>i</span>
+                        <span style='color: #f0ad4e'>n</span>
+                        <span style='color: #d9534f'>g</span></h1>
+
+                    <h6  class="blockquote-footer text-primary pl-5  display-4" id="x">Software Services</h6>
+                    <button type="button" class="btn-block btn-info" data-toggle="modal" data-target="#signInModal">Sign in <i class="fas fa-sign-in-alt"></i></button>
                 </div>
             </div>
+            <div class="col-sm align-self-center">
+                <br>
+                <section id="slideshow" class="align-self-center">
+                    <div class="entire-content align-self-center">
+                        <div class="content-carrousel ml-4">
+                            <figure class="shadow border border-primary"><img src="images/rev.gif"></figure>
+                            <figure class="shadow border border-success"><img src="images/rev.gif"/></figure>
+                            <figure class="shadow border border-warning"><img src="images/rev.gif"/></figure>
+                            <figure class="shadow border border-danger"><img src="images/rev.gif"/></figure>
+                            <figure class="shadow border border-primary"><img src="images/rev.gif"/></figure>
+                            <figure class="shadow border border-success"><img src="images/rev.gif"/></figure>
+                            <figure class="shadow border border-warning"><img src="images/rev.gif"/></figure>
+                            <figure class="shadow border border-danger"><img src="images/rev.gif"/></figure>
+                            <figure class="shadow border border-success"><img src="images/rev.gif"></figure>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-        <br><br><br><br>
-<h1  class="pl-5 text display-1 d">
-    <span style='color: #0275d8'>P</span>
-    <span style='color: #5cb85c'>i</span>
-    <span style='color: #f0ad4e'>n</span>
-    <span style='color: #d9534f'>g</span></h1>
+    </div>
 
-<h6  class="blockquote-footer text-primary pl-5  display-4" id="x">Software Services</h6>
-    <button type="button" class="btn-lg w-25 btn-info" data-toggle="modal" data-target="#signInModal">Sign in <i class="fas fa-sign-in-alt"></i></button>
-    </div>
-    <div class="scene">
-        <div class="cube">
-            <div class="side back"></div>
-            <div class="side left"></div>
-            <div class="side right"></div>
-            <div class="side top"></div>
-            <div class="side bottom"></div>
-            <div class="side front"></div>
-        </div>
-    </div>
+
+<br><br><br><br><br><br>
 </div>
 
 <div class="container justify-content-center">
@@ -278,14 +546,16 @@
     </div>
 </div>
 <body>
-<br>
 <div class="jumbotron">
-
-    <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+mbitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+    Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis
+    piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus
+    sit amet fermentum.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.cripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.</p>
 
 </div>
 
 
+<p class="text-justify">A
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
