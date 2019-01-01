@@ -9,7 +9,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<link rel="stylesheet" href="cube.scss" type="scss">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -292,8 +291,7 @@
         width: 100%;
         background: transparent;
         margin-right: 25px;
-        align-items: center;
-        align-content: center;
+
         box-sizing: border-box;
 
         margin-left: 100px;
@@ -333,7 +331,7 @@
 
     .entire-content {
         width: 190px;
-        perspective: 1000px;
+        perspective: 900px;
         position: relative;
         margin-left: 50px;
 
@@ -352,6 +350,7 @@
         cursor: pointer;
     }
 
+    /*Carousel Image card sizes*/
     .content-carrousel figure {
         width: 100%;
         height: 120px;
@@ -359,6 +358,14 @@
         overflow: hidden;
         position: absolute;
     }
+
+
+
+
+        /*TODO : Write a media query to change the translateZ px value to
+         make the rotational diameter smaller,thus allowing it to fit
+         within the jumbotron on smaller screens*/
+
 
     .content-carrousel figure:nth-child(1) {
         transform: rotateY(0deg) translateZ(300px);
@@ -453,7 +460,7 @@
             </div>
             <div class="col-sm align-self-center">
                 <br>
-                <section id="slideshow" class="align-self-center">
+                <section id="slideshow" class="container align-self-center d-sm-block ">
                     <div class="entire-content align-self-center">
                         <div class="content-carrousel ml-4">
                             <figure class="shadow border border-primary"><img src="images/rev.gif"></figure>
