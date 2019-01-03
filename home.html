@@ -93,13 +93,14 @@
         -moz-animation: left 2s linear infinite;
         -o-animation: left 2s linear infinite;
         animation: left 2s linear infinite;
+        left: 100em;
     }
 
 
 
     .one {width:255px;
         height:250px;
-        left: -4em;
+
         -webkit-animation-delay:1s;
     }
     .two {-webkit-animation-delay:.9s;
@@ -162,127 +163,6 @@
         100% { border-top: 8px solid #d9534f;}
     }
     /*End of wifi signal shit*/
-
-    /*Animations and keyframes for the spinning cube carousel, Must be very careful when changing properties
-    If you change the CubeSpinner dimensions, you must change the px values to half that value or shits gonna
-    get messed up. I set a mark on where the manges should be made*/
-
-
-                /*---->>>Thank you Calc 1<<<
-
-
-    @-webkit-keyframes spincube {
-        from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-        16%      { -webkit-transform: rotateY(-90deg);                           }
-        33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
-        50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg);           }
-        66%      { -webkit-transform: rotateY(-270deg) rotateX(90deg);           }
-        83%      { -webkit-transform: rotateX(90deg);                            }
-    }
-
-    /*  X,Y,Z Keyframes and rotational degrees
-    @keyframes spincube {
-        from,to {
-            -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-            -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-        }
-        16% {
-            -moz-transform: rotateY(-90deg);
-            -ms-transform: rotateY(-90deg);
-            transform: rotateY(-90deg);
-        }
-        33% {
-            -moz-transform: rotateY(-90deg) rotateZ(90deg);
-            -ms-transform: rotateY(-90deg) rotateZ(90deg);
-            transform: rotateY(-90deg) rotateZ(90deg);
-        }
-        50% {
-            -moz-transform: rotateY(-180deg) rotateZ(90deg);
-            -ms-transform: rotateY(-180deg) rotateZ(90deg);
-            transform: rotateY(-180deg) rotateZ(90deg);
-        }
-        66% {
-            -moz-transform: rotateY(-270deg) rotateX(90deg);
-            -ms-transform: rotateY(-270deg) rotateX(90deg);
-            transform: rotateY(-270deg) rotateX(90deg);
-        }
-        83% {
-            -moz-transform: rotateX(90deg);
-            -ms-transform: rotateX(90deg);
-            transform: rotateX(90deg);
-        }
-    }
-
-    .cubespinner {
-        -webkit-animation-name: spincube;
-        -webkit-animation-timing-function: ease-in-out;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-duration: 12s;
-
-        animation-name: spincube;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-duration: 12s;
-
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        -ms-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-
-        -webkit-transform-origin: 250px 250px 0;
-        -moz-transform-origin: 250px 250px 0;
-        -ms-transform-origin: 250px 250px 0;
-        transform-origin: 250px 250px 0;
-    }
-
-    .cubespinner div {
-        position: absolute;
-        width: 500px;
-        height: 500px;
-
-        background: rgba(255,255,255,0.8);
-
-        line-height: 500px;
-        text-align: center;
-    }
-
-    .cubespinner .face1 {
-        -webkit-transform: translateZ(250px);
-        -moz-transform: translateZ(250px);
-        -ms-transform: translateZ(250px);
-        transform: translateZ(250px);
-    }
-    .cubespinner .face2 {
-        -webkit-transform: rotateY(90deg) translateZ(250px);
-        -moz-transform: rotateY(90deg) translateZ(250px);
-        -ms-transform: rotateY(90deg) translateZ(250px);
-        transform: rotateY(90deg) translateZ(250px);
-    }
-    .cubespinner .face3 {
-        -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(250px);
-        -moz-transform: rotateY(90deg) rotateX(90deg) translateZ(250px);
-        -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(250px);
-        transform: rotateY(90deg) rotateX(90deg) translateZ(250px);
-    }
-    .cubespinner .face4 {
-        -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(250px);
-        -moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(250px);
-        -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(250px);
-        transform: rotateY(180deg) rotateZ(90deg) translateZ(250px);
-    }
-    .cubespinner .face5 {
-        -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(250px);
-        -moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(250px);
-        -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(250px);
-        transform: rotateY(-90deg) rotateZ(90deg) translateZ(250px);
-    }
-    .cubespinner .face6 {
-        -webkit-transform: rotateX(-90deg) translateZ(250px);
-        -moz-transform: rotateX(-90deg) translateZ(250px);
-        -ms-transform: rotateX(-90deg) translateZ(250px);
-        transform: rotateX(-90deg) translateZ(250px);
-    }*/
 
     /* 3D Slideshow */
 
@@ -361,9 +241,6 @@
 
 
 
-        /*TODO : Write a media query to change the translateZ px value to
-         make the rotational diameter smaller,thus allowing it to fit
-         within the jumbotron on smaller screens*/
 
 
     .content-carrousel figure:nth-child(1) {
@@ -414,14 +291,126 @@
           }
     }
 
-
+    /*TODO : Write a media query to change the translateZ px value to
+      make the rotational diameter smaller,thus allowing it to fit
+      within the jumbotron on smaller screens*/
 
     /* MEDIA QUERIES TO MAKE THE CAROUSEL RESPONSIVE ON SMALLER DEVICES.
                 DEVICES ARE LISTED ACCORDINGLY */
 
 
-    /* Smartphones (portrait and landscape) ----------- */
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /*IMPORTANT NOTE : IF ANY MEDIA QUERIES DON'T WORK ON A CERTAIN DEVICE THEN DOUBLE CHECK THE DEVICE'S PIXEL RATIO.
+                        <-----Normally ranges between 1.5 -> 4   for TABLETS AND PHONES
+                                       ranges between 1.0 -> 1.5 for LAPTOPS AND COMPUTERS-------->
+                                                        ^
+                                                        ^
+                                                        ^
+                                                        ^
+                     Look it up here to double check ---> https://www.mydevice.io/#compare-devices */
+
+
+
+    /* iPads (portrait and landscape) ----------- */
+    /* iPads (landscape) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        /* Styles */
+    }
+
+    /* iPads (portrait) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        /* Styles */
+        #headPi{
+
+            font-size: 89px;
+
+            padding-left: -15px;
+        }
+
+        .content-carrousel figure:nth-child(1) {
+            transform: rotateY(0deg) translateZ(200px);
+        } .content-carrousel figure:nth-child(2) {
+              transform: rotateY(40deg) translateZ(200px);
+          } .content-carrousel figure:nth-child(3) {
+                transform: rotateY(80deg) translateZ(200px);
+            } .content-carrousel figure:nth-child(4) {
+                  transform: rotateY(120deg) translateZ(200px);
+              } .content-carrousel figure:nth-child(5) {
+                    transform: rotateY(160deg) translateZ(200px);
+                } .content-carrousel figure:nth-child(6) {
+                      transform: rotateY(200deg) translateZ(200px);
+                  } .content-carrousel figure:nth-child(7) {
+                        transform: rotateY(240deg) translateZ(200px);
+                    } .content-carrousel figure:nth-child(8) {
+                          transform: rotateY(280deg) translateZ(200px);
+                      } .content-carrousel figure:nth-child(9) {
+                            transform: rotateY(320deg) translateZ(200px);
+                        } .content-carrousel figure:nth-child(10) {
+                              transform: rotateY(360deg) translateZ(200px);
+                          }
+
+
+
+        .content-carrousel{left: -95px; !important;}
+
+        .content-carrousel figure {
+            width: 100%;
+        }
+
+        #slideshow {
+            width: 50%;
+            background: transparent;
+            left: 70%;
+            box-sizing: border-box;
+
+        }
+
+
+
+        .entire-content {
+            width: 100px;
+            perspective: 900px;
+            position: relative;
+            margin-left: 210px;
+
+        }
+    }
+    /**********
+    iPad 3
+    **********/
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+        /* Styles */
+
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+        /* Styles */
+    }
+
+
+    /* iPhone 4 ----------- */
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+        /* Styles */
+    }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+        /* Styles */
+    }
+
+    /* iPhone 5 ----------- */
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+        /* Styles */
+
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+        /* Styles */
+        #headPi{
+
+            font-size: 55px;
+            padding-left: 30px;
+
+        }
+
         /* Styles */
         .content-carrousel figure:nth-child(1) {
             transform: rotateY(0deg) translateZ(200px);
@@ -447,10 +436,21 @@
 
 
 
-        .content-carrousel{left: -75px; !important;}
+        .content-carrousel{left: -95px; !important;}
+
         .content-carrousel figure {
             width: 100%;
         }
+
+        #slideshow {
+            width: 50%;
+            background: transparent;
+            left: 15px;
+            box-sizing: border-box;
+
+        }
+
+
 
         .entire-content {
             width: 100px;
@@ -460,6 +460,413 @@
 
         }
     }
+
+    /* iPhone 6, 7, 8 ----------- */
+    @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+        /* Styles */
+        /* Styles */
+
+        .content-carrousel figure:nth-child(1) {
+            transform: rotateY(0deg) translateZ(200px);
+        } .content-carrousel figure:nth-child(2) {
+              transform: rotateY(40deg) translateZ(200px);
+          } .content-carrousel figure:nth-child(3) {
+                transform: rotateY(80deg) translateZ(200px);
+            } .content-carrousel figure:nth-child(4) {
+                  transform: rotateY(120deg) translateZ(200px);
+              } .content-carrousel figure:nth-child(5) {
+                    transform: rotateY(160deg) translateZ(200px);
+                } .content-carrousel figure:nth-child(6) {
+                      transform: rotateY(200deg) translateZ(200px);
+                  } .content-carrousel figure:nth-child(7) {
+                        transform: rotateY(240deg) translateZ(200px);
+                    } .content-carrousel figure:nth-child(8) {
+                          transform: rotateY(280deg) translateZ(200px);
+                      } .content-carrousel figure:nth-child(9) {
+                            transform: rotateY(320deg) translateZ(200px);
+                        } .content-carrousel figure:nth-child(10) {
+                              transform: rotateY(360deg) translateZ(200px);
+                          }
+
+
+
+        .content-carrousel{left: -95px; !important;}
+
+        .content-carrousel figure {
+            width: 100%;
+        }
+
+        #slideshow {
+            width: 50%;
+            background: transparent;
+            left: 50%;
+            box-sizing: border-box;
+
+        }
+
+
+
+        .entire-content {
+            width: 100px;
+            perspective: 900px;
+            position: relative;
+            margin-left: 150px;
+
+        }
+    }
+
+    @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+        /* Styles */
+        /* Styles */
+        #headPi{
+
+            font-size: 80px;
+            padding-left: 8px;
+        }
+        .content-carrousel figure:nth-child(1) {
+            transform: rotateY(0deg) translateZ(160px);
+        } .content-carrousel figure:nth-child(2) {
+              transform: rotateY(40deg) translateZ(160px);
+          } .content-carrousel figure:nth-child(3) {
+                transform: rotateY(80deg) translateZ(160px);
+            } .content-carrousel figure:nth-child(4) {
+                  transform: rotateY(120deg) translateZ(160px);
+              } .content-carrousel figure:nth-child(5) {
+                    transform: rotateY(160deg) translateZ(160px);
+                } .content-carrousel figure:nth-child(6) {
+                      transform: rotateY(200deg) translateZ(160px);
+                  } .content-carrousel figure:nth-child(7) {
+                        transform: rotateY(240deg) translateZ(160px);
+                    } .content-carrousel figure:nth-child(8) {
+                          transform: rotateY(280deg) translateZ(160px);
+                      } .content-carrousel figure:nth-child(9) {
+                            transform: rotateY(320deg) translateZ(160px);
+                        } .content-carrousel figure:nth-child(10) {
+                              transform: rotateY(360deg) translateZ(160px);
+                          }
+
+
+
+        .content-carrousel{left: -75px; !important;}
+
+        .content-carrousel figure {
+            width: 120%;
+        }
+
+        #slideshow {
+            width: 80%;
+            background: transparent;
+            left: 15px;
+            box-sizing: border-box;
+
+        }
+
+
+
+        .entire-content {
+            width: 80px;
+            perspective: 1000px;
+            position: relative;
+            margin-left: 50px;
+
+        }
+    }
+
+    /* iPhone 6+, 7+, 8+ ----------- */
+    @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+        /* Styles */
+        .content-carrousel figure:nth-child(1) {
+            transform: rotateY(0deg) translateZ(200px);
+        } .content-carrousel figure:nth-child(2) {
+              transform: rotateY(40deg) translateZ(200px);
+          } .content-carrousel figure:nth-child(3) {
+                transform: rotateY(80deg) translateZ(200px);
+            } .content-carrousel figure:nth-child(4) {
+                  transform: rotateY(120deg) translateZ(200px);
+              } .content-carrousel figure:nth-child(5) {
+                    transform: rotateY(160deg) translateZ(200px);
+                } .content-carrousel figure:nth-child(6) {
+                      transform: rotateY(200deg) translateZ(200px);
+                  } .content-carrousel figure:nth-child(7) {
+                        transform: rotateY(240deg) translateZ(200px);
+                    } .content-carrousel figure:nth-child(8) {
+                          transform: rotateY(280deg) translateZ(200px);
+                      } .content-carrousel figure:nth-child(9) {
+                            transform: rotateY(320deg) translateZ(200px);
+                        } .content-carrousel figure:nth-child(10) {
+                              transform: rotateY(360deg) translateZ(200px);
+                          }
+
+
+
+        .content-carrousel{left: -95px; !important;}
+
+        .content-carrousel figure {
+            width: 100%;
+        }
+
+        #slideshow {
+            width: 50%;
+            background: transparent;
+            left: 50%;
+            box-sizing: border-box;
+
+        }
+
+
+
+        .entire-content {
+            width: 100px;
+            perspective: 900px;
+            position: relative;
+            margin-left: 150px;
+
+        }
+    }
+
+    @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+
+        .content-carrousel figure:nth-child(1) {
+            transform: rotateY(0deg) translateZ(150px);
+        } .content-carrousel figure:nth-child(2) {
+              transform: rotateY(40deg) translateZ(150px);
+          } .content-carrousel figure:nth-child(3) {
+                transform: rotateY(80deg) translateZ(150px);
+            } .content-carrousel figure:nth-child(4) {
+                  transform: rotateY(120deg) translateZ(150px);
+              } .content-carrousel figure:nth-child(5) {
+                    transform: rotateY(160deg) translateZ(150px);
+                } .content-carrousel figure:nth-child(6) {
+                      transform: rotateY(200deg) translateZ(150px);
+                  } .content-carrousel figure:nth-child(7) {
+                        transform: rotateY(240deg) translateZ(150px);
+                    } .content-carrousel figure:nth-child(8) {
+                          transform: rotateY(280deg) translateZ(150px);
+                      } .content-carrousel figure:nth-child(9) {
+                            transform: rotateY(320deg) translateZ(150px);
+                        } .content-carrousel figure:nth-child(10) {
+                              transform: rotateY(360deg) translateZ(150px);
+                          }
+
+
+
+        .content-carrousel{left: -95px; !important;}
+
+        .content-carrousel figure {
+            width: 100%;
+        }
+
+        #slideshow {
+            width: 50%;
+            background: transparent;
+            box-sizing: border-box;
+
+        }
+
+
+
+        .entire-content {
+            width: 100px;
+            perspective: 1000px;
+            position: relative;
+
+        }
+    }
+
+    /* iPhone X ----------- */
+    @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+    }
+
+    @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+        #headPi{
+
+            font-size: 80px;
+            padding-left: 8px;
+
+        }
+        .content-carrousel figure:nth-child(1) {
+            transform: rotateY(0deg) translateZ(160px);
+        } .content-carrousel figure:nth-child(2) {
+              transform: rotateY(40deg) translateZ(160px);
+          } .content-carrousel figure:nth-child(3) {
+                transform: rotateY(80deg) translateZ(160px);
+            } .content-carrousel figure:nth-child(4) {
+                  transform: rotateY(120deg) translateZ(160px);
+              } .content-carrousel figure:nth-child(5) {
+                    transform: rotateY(160deg) translateZ(160px);
+                } .content-carrousel figure:nth-child(6) {
+                      transform: rotateY(200deg) translateZ(160px);
+                  } .content-carrousel figure:nth-child(7) {
+                        transform: rotateY(240deg) translateZ(160px);
+                    } .content-carrousel figure:nth-child(8) {
+                          transform: rotateY(280deg) translateZ(160px);
+                      } .content-carrousel figure:nth-child(9) {
+                            transform: rotateY(320deg) translateZ(160px);
+                        } .content-carrousel figure:nth-child(10) {
+                              transform: rotateY(360deg) translateZ(160px);
+                          }
+
+
+
+        .content-carrousel{left: -75px; !important;}
+
+        .content-carrousel figure {
+            width: 120%;
+        }
+
+        #slideshow {
+            width: 79%;
+            background: transparent;
+            left: 15px;
+            box-sizing: border-box;
+
+        }
+
+
+
+        .entire-content {
+            width: 80px;
+            perspective: 1000px;
+            position: relative;
+            margin-left: 50px;
+
+        }
+    }
+
+    /* iPhone XS Max, XR ----------- */
+    @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+        /* Styles */
+        .content-carrousel figure:nth-child(1) {
+            transform: rotateY(0deg) translateZ(160px);
+        } .content-carrousel figure:nth-child(2) {
+              transform: rotateY(40deg) translateZ(160px);
+          } .content-carrousel figure:nth-child(3) {
+                transform: rotateY(80deg) translateZ(160px);
+            } .content-carrousel figure:nth-child(4) {
+                  transform: rotateY(120deg) translateZ(160px);
+              } .content-carrousel figure:nth-child(5) {
+                    transform: rotateY(160deg) translateZ(160px);
+                } .content-carrousel figure:nth-child(6) {
+                      transform: rotateY(200deg) translateZ(160px);
+                  } .content-carrousel figure:nth-child(7) {
+                        transform: rotateY(240deg) translateZ(160px);
+                    } .content-carrousel figure:nth-child(8) {
+                          transform: rotateY(280deg) translateZ(160px);
+                      } .content-carrousel figure:nth-child(9) {
+                            transform: rotateY(320deg) translateZ(160px);
+                        } .content-carrousel figure:nth-child(10) {
+                              transform: rotateY(360deg) translateZ(160px);
+                          }
+        .content-carrousel{left: -75px; !important;}
+        .content-carrousel figure {
+            width: 120%;
+        }
+        #slideshow {
+            width: 82%;
+            background: transparent;
+            left: 15px;
+            box-sizing: border-box;
+        }
+        .entire-content {
+            width: 80px;
+            perspective: 1000px;
+            position: relative;
+            margin-left: 50px;
+
+        }
+
+    }
+
+
+
+
+    @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+        /* Styles */
+        .content-carrousel figure:nth-child(1) {
+            transform: rotateY(0deg) translateZ(160px);
+        } .content-carrousel figure:nth-child(2) {
+              transform: rotateY(40deg) translateZ(160px);
+          } .content-carrousel figure:nth-child(3) {
+                transform: rotateY(80deg) translateZ(160px);
+            } .content-carrousel figure:nth-child(4) {
+                  transform: rotateY(120deg) translateZ(160px);
+              } .content-carrousel figure:nth-child(5) {
+                    transform: rotateY(160deg) translateZ(160px);
+                } .content-carrousel figure:nth-child(6) {
+                      transform: rotateY(200deg) translateZ(160px);
+                  } .content-carrousel figure:nth-child(7) {
+                        transform: rotateY(240deg) translateZ(160px);
+                    } .content-carrousel figure:nth-child(8) {
+                          transform: rotateY(280deg) translateZ(160px);
+                      } .content-carrousel figure:nth-child(9) {
+                            transform: rotateY(320deg) translateZ(160px);
+                        } .content-carrousel figure:nth-child(10) {
+                              transform: rotateY(360deg) translateZ(160px);
+                          }
+        .content-carrousel{left: -75px; !important;}
+        .content-carrousel figure {
+            width: 120%;
+        }
+        #slideshow {
+            width: 82%;
+            background: transparent;
+            left: 15px;
+            box-sizing: border-box;
+
+        }
+        .entire-content {
+            width: 80px;
+            perspective: 1000px;
+            position: relative;
+            margin-left: 50px;
+
+        }
+    }
+
+
+
+
+    /* Samsung Galaxy S3 ----------- */
+    @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+        /* Styles */
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+        /* Styles */
+    }
+
+    /* Samsung Galaxy S4 ----------- */
+    @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+    }
+
+    @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+    }
+
+    /* Samsung Galaxy S5 ----------- */
+    @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+    }
+
+    @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+        /* Styles */
+
+        #headPi{
+
+            font-size: 80px;
+            padding-left: 14px;
+        }
+
+
+    }
+
+
 
 
 
@@ -475,7 +882,7 @@
             <div class="col-sm">
                 <div class="container">
 
-                    <div class="clearfix pl-1" id="circle">
+                    <div class="clearfix"  id="circle">
                         <br>
                         <div class="circle one ">
                             <div class="circle two">
@@ -496,14 +903,14 @@
                     </div>
                     <br><br><br><br>
 
-                    <h1  class="pl-5 text display-1">
-                        <span style='color: #0275d8'>P</span>
+                    <h1 id="headPi" class="text display-1">
+                        <span style='color: #0275d8;padding-left: 40px;'>P</span>
                         <span style='color: #5cb85c'>i</span>
                         <span style='color: #f0ad4e'>n</span>
                         <span style='color: #d9534f'>g</span></h1>
 
                     <h6  class="blockquote-footer text-primary pl-5  display-4" id="x">Software Services</h6>
-                    <button type="button" class="btn-block btn-info w-50" data-toggle="modal" data-target="#signInModal">Sign in <i class="fas fa-sign-in-alt"></i></button>
+                    <button type="button" class="btn-block btn-info w-50 rounded" data-toggle="modal" data-target="#signInModal">Sign in <i class="fas fa-sign-in-alt"></i></button>
                 </div>
             </div>
             <div class="col-sm align-self-center">
