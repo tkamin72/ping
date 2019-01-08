@@ -38,6 +38,9 @@ if (isset($_REQUEST,$_REQUEST['page'])) {
             //require '';
 
         }
+        else{
+            //require ''; I think this is where we wanna pop our 404 page //
+        }
 }
 else
     require_once 'home.html';
