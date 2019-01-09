@@ -2,6 +2,8 @@
 
 session_start();//Start a session when anyone connects.
                 // Will allow me to use Server side Session variables and functions
+
+
 /**
  * Created by PhpStorm.
  * User: fadel
@@ -9,9 +11,11 @@ session_start();//Start a session when anyone connects.
  * Time: 3:07 PM
  */
 
-//require_once ('form_handler.php');  //<---- TODO : Uncomment this when
+require_once ('formHandler.php');  //<---- TODO : Uncomment this when
 //        form handlers ready. This script will run before the 'page' Transition
 //
+
+
 
 
 if (isset($_REQUEST,$_REQUEST['page'])) {

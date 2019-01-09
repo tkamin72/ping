@@ -46,10 +46,10 @@
                         <a class="nav-link text-danger ml-3 pr-4" href="#">Contact <i class="fas fa-phone"></i></a>
                     </li>
                 </ul>
+
+                                <!--ADMIN LOGIN MODAL FORM  -->
                 <form class="ml-auto mt-auto form-inline">
-                    <!-- Use a hidden input field with a name
-                    and value so the for handler will know wht to
-                    do when this form is hit-->
+
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="&#xf1a0;oogle Search" style="font-family:Arial,FontAwesome;">
                         <div class="input-group-append">
@@ -57,6 +57,7 @@
                         </div>
                     </div>
                 </form>
+                                <!--END OF ADMIN LOGIN MODAL FORM  -->
 
             </div>
         </div>
@@ -1161,7 +1162,8 @@
     </div>
 </div>
 
-<!-- Modal -->
+                                    <!--SIGN IN MODAL -->
+
 <div class="modal fade" id="signInModal" tabindex="-1" role="dialog"  aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -1171,11 +1173,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form class="needs-validation" id="loginForm" novalidate>
+
+            <form method="post" class="needs-validation" id="loginForm" novalidate> <!--FORM START -->
+
+                <input type="hidden" name="action" value="authenticate"> <!--ESSENTIAL FOR FORM HANDLER TO KNOW WHAT CODE TO RUN -->
+
                 <div class="form-group">
                     <div class="col-md-6 mb-3 mr-2 ml-2 mt-2 ">
                         <label for="username">User name</label>
-                        <input type="text" class="form-control w-100" id="username"  required>
+
+                        <input type="text" class="form-control w-100" id="username" name="uname"  required> <!--USERNAME INPUT-->
+
                         <div class="valid-feedback">
                             Valid entry <i class="fas fa-thumbs-up"></i>
                         </div>
@@ -1185,7 +1193,10 @@
                     </div>
                     <div class="col-md-6 mb-3 mr-2 ml-2">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control w-100" id="password" required><small class="form-text text-muted">Never share your Password with anyone. No matter what...</small>
+
+                        <input type="password" class="form-control w-100" id="password" name="pass" required> <!--PASSWORD INPUT -->
+
+                        <small class="form-text text-muted">Never share your Password with anyone. No matter what...</small>
                         <div class="valid-feedback">
                             Valid entry <i class="fas fa-thumbs-up"></i>
                         </div>
@@ -1196,15 +1207,19 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="submit" value="Login" class="btn btn-info" name="signIn">Submit</button> <!--Triggers form handler-->
+
+
                 </div>
-            </form>
+            </form><!--FORM END -->
 
 
 
         </div>
     </div>
 </div>
+
+                                        <!--SIGN IN MODAL ENDS HERE-->
 <body>
 <div class="jumbotron">
 mbitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
@@ -1215,7 +1230,7 @@ mbitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fer
 </div>
 
 
-<p class="text-justify">A
+<p class="text-justify">
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -1253,36 +1268,7 @@ mbitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fer
         }, false);
     })();
 
-    //AJAX for login//
-
-                                $(document).ready(function() {
-                                    $("#loginForm").submit(function(e){
-                                        e.preventDefault();
-                                        $.ajax({
-                                            url:'isValidAccount.php',
-                                            type:'POST',
-                                            data: {username:$("#username").val(), password:$("#password").val()},
-                                            success: function(resp) {
-                                                if(resp == "invalid") {
-                                                    $("#errorMsg").html("Invalid username and password!");
-                                                } else {
-                                                    window.location.href= resp;
-                                                }
-                                            }
-                                        });
-                                    });
-                                });
-
-
-
-
-
-
-
-
-
-
-
+                                        //AJAX for login//
 
 </script>
 </html>
