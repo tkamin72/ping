@@ -28,52 +28,35 @@ if (isset($_POST['action'])){
 
 
 
-                //TODO : Create an encryption module in PHP  to encrypt both the passwords AND user names since its sensitive data(Admin login)
+                //<!-- Use 512 bit ARGON II Encryption with self defined Sal--!>//
 
                 if (isset($_POST['uname'], $_POST['pass'])){ //check if username and password have set values
 
-                    $loop_for_uname_and_pass = 'SELECT admin_uname FROM Admins'; // grab username for comparing,
-                                                                                // not risking a select * until shits confirmed by uname
-                                                                                //TODO : Adding a master pin for each admin so they can  log in
+                    $loop_for_uname_and_pass = 'SELECT * FROM Admins WHERE admin_uname = ?'; // grab username AND PASS for verifying
+
 
                     $stmt = $pdo->prepare($loop_for_uname_and_pass); //prepare statements to trim SQL injections
 
-                    $stmt->execute();//execute query
+                    $stmt->execute($_POST['uname']);//execute query by passing the search parameter (username)
 
-                    //could also set it in the while loop below
                     $stmt->setFetchMode(PDO::FETCH_CLASS, 'Admin'); //Setting the fetch mode to class
                                                                    //so it'll automatically assign column values
                                                                   // to the class PRIVATE properties. no more fetch num bullshit.
-
-                    //Looping through the result of user-names to confirm uname
-
-                    while ($admin = $stmt->fetch()){
-
-                        echo $admin->admin_uname;
+                    $admin = $stmt->fetchObject(); // fetch row and return it as an Object as defined in Admin.php class file
 
 
-                       /* if ($_POST['uname'] == $admin->admin_uname){
+                    if ($admin && password_verify($_POST['pass'], $admin->admin_password))
+                    {
+                        //if its authenticated
+                        $_SESSION['active_user'] = $admin; // set a Server session variable to represented the newly constructed object
+                    } else {
 
-                            var_dump($admin->admin_uname);
-                            echo 'aye';
-                        }*/
-
-
-
-                        //NOTE : $admin is the Admin object // no need for new operators or declarations//
-
-                        //TODO : check if Username input matches the retrieved username from each Database row/entry
-
-                        //if it matches, check if the password (In an encrypted format) matches the stored hash in the dbs
-
-                        //if they match then ask for authenticating pin and compare it (as a hash) with the stored hashed pin
-
-                        //NOTE : WE can add other forms of authentication like security question and what not
-
-                        //TODO : Limit login attempts to 3 tries, then disable account for 30 mins. Log the IP address to blacklist
+                       // $log_failed_attempt_IP = 'INSERT INTO potential_break_in VALUES ("'.$admin->admin_password.'",)';
 
 
+                        //"invalid";
                     }
+
 
                     //TODO : set session variables for activity info //
 
