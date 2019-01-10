@@ -34,7 +34,7 @@ if (isset($_POST['action'])){
 
                     $loop_for_uname_and_pass = 'SELECT admin_uname FROM Admins'; // grab username for comparing,
                                                                                 // not risking a select * until shits confirmed by uname
-                                                                                //TODO : Adding a master pin for each admin so it logs in
+                                                                                //TODO : Adding a master pin for each admin so they can  log in
 
                     $stmt = $pdo->prepare($loop_for_uname_and_pass); //prepare statements to trim SQL injections
 
@@ -47,7 +47,16 @@ if (isset($_POST['action'])){
 
                     //Looping through the result of user-names to confirm uname
 
-                    while ($admin = $stmt->fetch() ){
+                    while ($admin = $stmt->fetch()){
+
+                        echo $admin->admin_uname;
+
+
+                       /* if ($_POST['uname'] == $admin->admin_uname){
+
+                            var_dump($admin->admin_uname);
+                            echo 'aye';
+                        }*/
 
 
 

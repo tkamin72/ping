@@ -33,4 +33,15 @@ class Admin
 
     }
 
+    public function get_Admin_Uname(){
+
+        return $this->admin_uname;
+    }
+
+    public function get_Admin_Pass(){
+
+        return $this->admin_password;
+    }
+
+
 }
